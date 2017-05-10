@@ -1,7 +1,7 @@
 {
   "name": "immutable-trees",
   "version": "0.0.0",
-  "description": "Immutable.js friendly Binary Tree implementations.",
+  "description": "Immutable.js friendly Binary Search Tree implementations.",
   "main": "lib/index.js",
   "scripts": {
     "prepublish": "npm run clean && npm run build",
