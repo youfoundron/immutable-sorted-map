@@ -2,8 +2,8 @@ import Node from '../src/Node'
 import Tree from '../src/Tree'
 
 describe('Tree', () => {
-  let myNode = new Node('foo', 'bar')
-  let myTree = new Tree(myNode)
+  const myNode = new Node('foo', 'bar')
+  const myTree = new Tree(myNode)
 
   describe('Class values', () => {
     it('#klass', () => {
@@ -31,11 +31,21 @@ describe('Tree', () => {
       expect(myTree.includes('bar')).toEqual(true)
       expect(myTree.contains('bar')).toEqual(true)
     })
+    it('#first', () => {
+      expect(myTree.first()).toEqual('bar')
+      const _myTree = myTree.set('moo', 'cow').set('aaa', 'car')
+      expect(_myTree.first()).toEqual('car')
+    })
+    it('#last', () => {
+      expect(myTree.last()).toEqual('bar')
+      const _myTree = myTree.set('moo', 'cow').set('aaa', 'car')
+      expect(_myTree.last()).toEqual('cow')
+    })
   })
 
   describe('Persistent changes', () => {
     it('#set', () => {
-      let _myTree = myTree.set('moo', 'cow')
+      const _myTree = myTree.set('moo', 'cow')
       expect(_myTree.size).toEqual(2)
       expect(_myTree.get('moo')).toEqual('cow')
     })
