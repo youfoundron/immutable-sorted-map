@@ -48,6 +48,7 @@ describe('Tree', () => {
       const _myTree = myTree.set('moo', 'cow')
       expect(_myTree.size).toEqual(2)
       expect(_myTree.get('moo')).toEqual('cow')
+      expect(_myTree.set('moo', 'pig').get('moo')).toEqual('pig')
     })
   })
 })
