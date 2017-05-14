@@ -11,7 +11,7 @@ export default {
     libraryTarget: 'umd'
   },
   module: {
-    rules: [ makeRule('js', 'babel-loader') ]
+    rules: [ makeRule(/\.js$/, 'babel-loader') ]
   },
   externals: {
     'immutable': {
