@@ -1,31 +1,31 @@
 import isMap from './isMap'
 
-const inOrder = (node, cb) => {
+const leftToRight = (node, cb) => {
   if (isMap(node)) {
     const leftChild = node.get('left')
     const rightChild = node.get('right')
 
-    if (leftChild) inOrder(leftChild, cb)     // traverse the left subtree
+    if (leftChild) leftToRight(leftChild, cb)     // traverse the left subtree
     cb.call(this, node)                       // process the callback on the current node
-    if (rightChild) inOrder(rightChild, cb)   // traverse the right subtree
+    if (rightChild) leftToRight(rightChild, cb)   // traverse the right subtree
   }
 }
 
-const inReverse = (node, cb) => {
+const rightToleft = (node, cb) => {
   if (isMap(node)) {
     const leftChild = node.get('left')
     const rightChild = node.get('right')
 
-    if (rightChild) inReverse(rightChild, cb) // traverse the right subtree
+    if (rightChild) rightToleft(rightChild, cb) // traverse the right subtree
     cb.call(this, node)                       // process the callback on the current node
-    if (leftChild) inReverse(leftChild, cb)   // traverse the left subtree
+    if (leftChild) rightToleft(leftChild, cb)   // traverse the left subtree
   }
 }
 
-export default function traverseByDepth (callback, startNode = this.root, shouldTravelInOrder = true) {
-  if (shouldTravelInOrder) {
-    inOrder(startNode, callback)
+export default function traverseByDepth (callback, startNode = this.root, ltr = true) {
+  if (ltr) {
+    leftToRight(startNode, callback)
   } else {
-    inReverse(startNode, callback)
+    rightToleft(startNode, callback)
   }
 }
