@@ -14,6 +14,8 @@ class Tree extends Map {
 /* Util
 ** *********************** */
 Tree.prototype.search = util.search
+Tree.prototype.getMinNode = util.getMinNode
+Tree.prototype.getMaxNode = util.getMaxNode
 Tree.prototype.calculateSize = util.calculateSize
 Tree.prototype.traverseByDepth = util.traverseByDepth
 // Tree.prototype.traverseByBreadth = util.traverseByBreadth
@@ -23,8 +25,8 @@ Tree.prototype.traverseByDepth = util.traverseByDepth
 Tree.prototype.get = api.get
 Tree.prototype.has = api.has
 // Tree.prototype.includes = api.includes
-// Tree.prototype.first = api.first
-// Tree.prototype.last = api.last
+Tree.prototype.first = api.first
+Tree.prototype.last = api.last
 
 /* Reading deep values
 ** *********************** */
