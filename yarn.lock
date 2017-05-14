@@ -371,6 +371,10 @@ babel-plugin-jest-hoist@^20.0.0:
   version "20.0.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-jest-hoist/-/babel-plugin-jest-hoist-20.0.0.tgz#d2afe94fa6aea3b8bfa5d61d8028f633c898d86d"
 
+babel-plugin-syntax-object-rest-spread@^6.8.0:
+  version "6.13.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-syntax-object-rest-spread/-/babel-plugin-syntax-object-rest-spread-6.13.0.tgz#fd6536f2bce13836ffa3a5458c4903a597bb3bf5"
+
 babel-plugin-transform-es2015-arrow-functions@^6.22.0:
   version "6.22.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-es2015-arrow-functions/-/babel-plugin-transform-es2015-arrow-functions-6.22.0.tgz#452692cb711d5f79dc7f85e440ce41b9f244d221"
@@ -538,6 +542,13 @@ babel-plugin-transform-es2015-unicode-regex@^6.24.1:
     babel-helper-regex "^6.24.1"
     babel-runtime "^6.22.0"
     regexpu-core "^2.0.0"
+
+babel-plugin-transform-object-rest-spread@^6.23.0:
+  version "6.23.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-transform-object-rest-spread/-/babel-plugin-transform-object-rest-spread-6.23.0.tgz#875d6bc9be761c58a2ae3feee5dc4895d8c7f921"
+  dependencies:
+    babel-plugin-syntax-object-rest-spread "^6.8.0"
+    babel-runtime "^6.22.0"
 
 babel-plugin-transform-regenerator@^6.24.1:
   version "6.24.1"
@@ -1575,6 +1586,12 @@ extend@^3.0.0, extend@~3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/extend/-/extend-3.0.1.tgz#a755ea7bc1adfcc5a31ce7e762dbaadc5e636444"
 
+extendable-immutable@^1.3.2:
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/extendable-immutable/-/extendable-immutable-1.3.2.tgz#d4acde24427faa63179dde9dca2cd41c8e5e14a3"
+  dependencies:
+    invariant "^2.2.1"
+
 external-editor@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/external-editor/-/external-editor-1.1.1.tgz#12d7b0db850f7ff7e7081baf4005700060c4600b"
@@ -1992,9 +2009,9 @@ ignore@^3.0.11, ignore@^3.0.9, ignore@^3.2.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-3.3.0.tgz#3812d22cbe9125f2c2b4915755a1b8abd745a001"
 
-immutable@^3.8.1:
-  version "3.8.1"
-  resolved "https://registry.yarnpkg.com/immutable/-/immutable-3.8.1.tgz#200807f11ab0f72710ea485542de088075f68cd2"
+immutable@^4.0.0:
+  version "4.0.0-rc.2"
+  resolved "https://registry.yarnpkg.com/immutable/-/immutable-4.0.0-rc.2.tgz#fdd0948aae728fda2306a02f72bb73e1773432d1"
 
 imurmurhash@^0.1.4:
   version "0.1.4"
@@ -2064,7 +2081,7 @@ interpret@^1.0.0:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.0.3.tgz#cbc35c62eeee73f19ab7b10a801511401afc0f90"
 
-invariant@^2.2.0:
+invariant@^2.2.0, invariant@^2.2.1:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.2.tgz#9e1f56ac0acdb6bf303306f338be3b204ae60360"
   dependencies:
