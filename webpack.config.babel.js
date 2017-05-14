@@ -22,7 +22,7 @@ export default {
     }
   },
   plugins: [
-    new optimize.UgflifyJsPlugin({
+    new optimize.UglifyJsPlugin({
       comments: false
     })
   ]
