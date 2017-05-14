@@ -13,6 +13,7 @@ class Tree extends Map {
 
 /* Util
 ** *********************** */
+Tree.prototype.search = util.search
 Tree.prototype.calculateSize = util.calculateSize
 Tree.prototype.traverseByDepth = util.traverseByDepth
 // Tree.prototype.traverseByBreadth = util.traverseByBreadth
