@@ -1,3 +1,4 @@
+import I from 'immutable'
 import Node from '../src/Node'
 import Tree from '../src/Tree'
 
@@ -40,6 +41,20 @@ describe('Tree', () => {
       expect(myTree.last()).toEqual('bar')
       const _myTree = myTree.set('moo', 'cow').set('aaa', 'car')
       expect(_myTree.last()).toEqual('cow')
+    })
+  })
+
+  describe('Reading deep values', () => {
+    it('#getIn', () => {
+      const _myTree = myTree.set('moo', I.Map({soundOf: 'cow'}))
+      expect(_myTree.getIn(['moo', 'soundOf'])).toEqual('cow')
+      expect(_myTree.getIn(['moo', 'nope'])).toEqual(undefined)
+      expect(_myTree.getIn(['moo', 'node'], 'notSet')).toEqual('notSet')
+    })
+    it('#hasIn', () => {
+      const _myTree = myTree.set('moo', I.Map({soundOf: 'cow'}))
+      expect(_myTree.hasIn(['moo', 'soundOf'])).toEqual(true)
+      expect(_myTree.hasIn(['moo', 'nope'])).toEqual(false)
     })
   })
 
