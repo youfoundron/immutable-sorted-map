@@ -21,6 +21,9 @@ describe('Tree', () => {
     it('#get', () => {
       expect(myTree.get('foo')).toEqual(myNode.get('value'))
     })
+    it('#has', () => {
+      expect(myTree.has('foo')).toEqual(true)
+    })
   })
 
   describe('Persistent changes', () => {
