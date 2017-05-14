@@ -9,6 +9,7 @@
     "build": "webpack",
     "lint": "standard | snazzy",
     "test": "jest",
+    "test:watch": "jest --watch",
     "coverage": "jest --coverage",
     "coveralls": "cat ./coverage/lcov.info | coveralls"
   },
