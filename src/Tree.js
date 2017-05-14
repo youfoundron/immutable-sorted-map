@@ -21,7 +21,7 @@ Tree.prototype.traverseByDepth = util.traverseByDepth
 /* Reading values
 ** *********************** */
 Tree.prototype.get = api.get
-// Tree.prototype.has = api.has
+Tree.prototype.has = api.has
 // Tree.prototype.includes = api.includes
 // Tree.prototype.first = api.first
 // Tree.prototype.last = api.last
