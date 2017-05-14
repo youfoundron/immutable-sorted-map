@@ -27,6 +27,10 @@ describe('Tree', () => {
       expect(myTree.has('foo')).toEqual(true)
       expect(myTree.has('nope')).toEqual(false)
     })
+    it('#includes', () => {
+      expect(myTree.includes('bar')).toEqual(true)
+      expect(myTree.contains('bar')).toEqual(true)
+    })
   })
 
   describe('Persistent changes', () => {
