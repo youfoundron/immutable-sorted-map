@@ -1,3 +1,5 @@
-export default function (key) {
-  return this.search(key, node => node && node.get('value'))
+export default function (key, notSetValue) {
+  return this.search(key, node =>
+    (node && node.get('value')) || notSetValue
+  )
 }

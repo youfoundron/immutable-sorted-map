@@ -20,6 +20,8 @@ describe('Tree', () => {
   describe('Reading values', () => {
     it('#get', () => {
       expect(myTree.get('foo')).toEqual(myNode.get('value'))
+      expect(myTree.get('nope')).toEqual(undefined)
+      expect(myTree.get('nope', 'notSet')).toEqual('notSet')
     })
     it('#has', () => {
       expect(myTree.has('foo')).toEqual(true)
