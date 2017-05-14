@@ -25,6 +25,7 @@ describe('Tree', () => {
     })
     it('#has', () => {
       expect(myTree.has('foo')).toEqual(true)
+      expect(myTree.has('nope')).toEqual(false)
     })
   })
 
