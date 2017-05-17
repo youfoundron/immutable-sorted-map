@@ -89,5 +89,8 @@ describe('Tree', () => {
       expect(tree.removeAll(['e', 'b']).get('e')).toEqual(undefined)
       expect(tree.removeAll(['e', 'b']).get('b')).toEqual(undefined)
     })
+    it('#clear', () => {
+      expect(myTree.clear().root.isEmpty()).toEqual(true)
+    })
   })
 })
