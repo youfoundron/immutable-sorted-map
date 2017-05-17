@@ -1,3 +1,3 @@
 export default function () {
-  return this.getMinNode(this.root, node => node && node.get('value'))
+  return this.getMinNode().get('value')
 }
