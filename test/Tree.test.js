@@ -92,5 +92,9 @@ describe('Tree', () => {
     it('#clear', () => {
       expect(myTree.clear().root.isEmpty()).toEqual(true)
     })
+    it('#update', () => {
+      expect(myTree.update('foo', value => value.toUpperCase()).get('foo')).toEqual(myTree.get('foo').toUpperCase())
+      expect(myTree.update('boo', 'mama', value => value.toUpperCase()).get('boo')).toEqual('MAMA')
+    })
   })
 })
