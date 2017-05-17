@@ -95,10 +95,13 @@ describe('Tree', () => {
       expect(myTree.update('boo', 'mama', value => value.toUpperCase()).get('boo')).toEqual('MAMA')
     })
     it('#merge', () => {
-      const treeA = new Tree(I.Map()).set('a', 'a').set('b', 'b')
-      const treeB = new Tree(I.Map()).set('a', 'b').set('c', 'c')
+      const treeA = new Tree().set('a', 'a').set('b', 'b')
+      const treeB = new Tree().set('a', 'b').set('c', 'c')
       expect(treeA.merge(treeB).get('a')).toEqual('b')
       expect(treeB.merge(treeA).get('a')).toEqual('a')
+    })
+    it('#mergeWith', () => {
+      // cosnt
     })
   })
 })

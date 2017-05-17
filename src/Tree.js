@@ -4,7 +4,7 @@ import api from './api'
 import * as util from './util'
 
 class Tree extends ExtendableMap {
-  constructor (data) {
+  constructor (data = {}) {
     const entries = util.isMap(data)
       ? data.entries() : Object.entries(data)
     const treeMap = util.isTreeMap(data)
