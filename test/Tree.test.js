@@ -1,17 +1,15 @@
 import I from 'immutable'
-import Node from '../src/Node'
 import Tree from '../src/Tree'
 
 describe('Tree', () => {
-  const myNode = new Node('foo', 'bar')
-  const myTree = new Tree(myNode)
+  const myTree = new Tree({foo: 'bar'})
 
   describe('Class values', () => {
     it('#klass', () => {
       expect(myTree.klass).toEqual(Tree)
     })
     it('#root', () => {
-      expect(myTree.root).toEqual(myNode)
+      expect(myTree.root.toJS().value).toEqual('bar')
     })
     it('#size', () => {
       expect(myTree.size).toEqual(1)
@@ -20,7 +18,7 @@ describe('Tree', () => {
 
   describe('Reading values', () => {
     it('#get', () => {
-      expect(myTree.get('foo')).toEqual(myNode.get('value'))
+      expect(myTree.get('foo')).toEqual('bar')
       expect(myTree.get('nope')).toEqual(undefined)
       expect(myTree.get('nope', 'notSet')).toEqual('notSet')
     })
@@ -66,7 +64,7 @@ describe('Tree', () => {
       expect(_myTree.set('moo', 'pig').get('moo')).toEqual('pig')
     })
     it('#delete', () => {
-      const tree = new Tree(new Node('d', 'dee'))
+      const tree = new Tree({'d': 'dee'})
         .set('b', 'bee').set('f', 'fee').set('e', 'ear')
       expect(tree.delete('d').get('d')).toEqual(undefined)
       expect(tree.delete('b').get('b')).toEqual(undefined)
@@ -78,7 +76,7 @@ describe('Tree', () => {
       expect(tree.remove('e').get('e')).toEqual(undefined)
     })
     it('#deleteAll', () => {
-      const tree = new Tree(new Node('d', 'dee'))
+      const tree = new Tree({'d': 'dee'})
         .set('b', 'bee').set('f', 'fee').set('e', 'ear')
       expect(tree.deleteAll(['f', 'd']).get('f')).toEqual(undefined)
       expect(tree.deleteAll(['f', 'd']).get('d')).toEqual(undefined)
