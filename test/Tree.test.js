@@ -65,5 +65,12 @@ describe('Tree', () => {
       expect(_myTree.get('moo')).toEqual('cow')
       expect(_myTree.set('moo', 'pig').get('moo')).toEqual('pig')
     })
+    it('#delete', () => {
+      /* Write tests for:
+       * 0 children & 0 children root
+       * 1 child & 1 child root
+       * 2 children & 2 children root
+       */
+    })
   })
 })
