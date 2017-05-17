@@ -48,7 +48,7 @@ Tree.prototype.removeAll = api.deleteAll
 Tree.prototype.clear = api.clear
 // Tree.prototype.update = api.update
 Tree.prototype.merge = api.merge
-// Tree.prototype.mergeWith = api.mergeWith
+Tree.prototype.mergeWith = api.mergeWith
 // Tree.prototype.mergeDeep = api.mergeDeep
 // Tree.prototype.mergeDeepWith = api.mergeDeepWith
 
