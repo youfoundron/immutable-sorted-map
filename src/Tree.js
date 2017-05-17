@@ -6,19 +6,20 @@ class Tree extends Map {
   constructor (root) {
     super(util.isMap(root) ? root.toJS() : root)
     this.klass = Tree
-    this.root = util.isMap(root) ? root : Map(root)
+    this.root = this.isMap(root) ? root : Map(root)
     this.size = this.calculateSize()
   }
 }
 
 /* Util
 ** *********************** */
+Tree.prototype.isMap = util.isMap
 Tree.prototype.search = util.search
 Tree.prototype.getMinNode = util.getMinNode
 Tree.prototype.getMaxNode = util.getMaxNode
 Tree.prototype.calculateSize = util.calculateSize
 Tree.prototype.traverseByDepth = util.traverseByDepth
-// Tree.prototype.traverseByBreadth = util.traverseByBreadth
+Tree.prototype.traverseByBreadth = util.traverseByBreadth
 
 /* Reading values
 ** *********************** */
@@ -36,7 +37,8 @@ Tree.prototype.last = api.last
 /* Persistent changes
 ** *********************** */
 Tree.prototype.set = api.set
-// Tree.prototype.delete = api.delete
+Tree.prototype.delete = api.delete
+Tree.prototype.remove = api.delete
 // Tree.prototype.deleteAll = api.deleteAll
 // Tree.prototype.clear = api.clear
 // Tree.prototype.update = api.update
