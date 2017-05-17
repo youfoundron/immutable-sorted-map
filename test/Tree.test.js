@@ -101,7 +101,12 @@ describe('Tree', () => {
       expect(treeB.merge(treeA).get('a')).toEqual('a')
     })
     it('#mergeWith', () => {
-      // cosnt
+      const treeA = new Tree().set('a', 'a').set('b', 'b')
+      const treeB = new Tree().set('a', 'b').set('c', 'c')
+      expect(treeA.mergeWith((oldValue, newValue) =>
+        oldValue < newValue ? oldValue : newValue
+        , treeB
+      ).get('a')).toEqual('a')
     })
   })
 })
