@@ -1,9 +1,10 @@
-import isMap from './isMap'
 import identityFunc from './identityFunc'
 
-export default function getMaxNode (node = this.root, callback = identityFunc) {
+export default function getMaxNode (node = this.root, onTraverse = identityFunc) {
   const rightChild = node.get('right')
-  return isMap(rightChild)
-    ? this.getMaxNode(rightChild, callback)
-    : callback(node)
+  if (this.isMap(rightChild)) {
+    onTraverse(rightChild)
+    return this.getMaxNode(rightChild, onTraverse)
+  }
+  return node
 }
