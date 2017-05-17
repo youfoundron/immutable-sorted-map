@@ -19,7 +19,6 @@ Tree.prototype.getMinNode = util.getMinNode
 Tree.prototype.getMaxNode = util.getMaxNode
 Tree.prototype.calculateSize = util.calculateSize
 Tree.prototype.traverseByDepth = util.traverseByDepth
-Tree.prototype.traverseByBreadth = util.traverseByBreadth
 
 /* Reading values
 ** *********************** */
