@@ -66,11 +66,28 @@ describe('Tree', () => {
       expect(_myTree.set('moo', 'pig').get('moo')).toEqual('pig')
     })
     it('#delete', () => {
-      /* Write tests for:
-       * 0 children & 0 children root
-       * 1 child & 1 child root
-       * 2 children & 2 children root
-       */
+      const tree = new Tree(new Node('d', 'dee'))
+        .set('b', 'bee').set('f', 'fee').set('e', 'ear')
+      expect(tree.delete('d').get('d')).toEqual(undefined)
+      expect(tree.delete('b').get('b')).toEqual(undefined)
+      expect(tree.delete('f').get('f')).toEqual(undefined)
+      expect(tree.delete('e').get('e')).toEqual(undefined)
+      expect(tree.remove('d').get('d')).toEqual(undefined)
+      expect(tree.remove('b').get('b')).toEqual(undefined)
+      expect(tree.remove('f').get('f')).toEqual(undefined)
+      expect(tree.remove('e').get('e')).toEqual(undefined)
+    })
+    it('#deleteAll', () => {
+      const tree = new Tree(new Node('d', 'dee'))
+        .set('b', 'bee').set('f', 'fee').set('e', 'ear')
+      expect(tree.deleteAll(['f', 'd']).get('f')).toEqual(undefined)
+      expect(tree.deleteAll(['f', 'd']).get('d')).toEqual(undefined)
+      expect(tree.deleteAll(['e', 'b']).get('e')).toEqual(undefined)
+      expect(tree.deleteAll(['e', 'b']).get('b')).toEqual(undefined)
+      expect(tree.removeAll(['f', 'd']).get('f')).toEqual(undefined)
+      expect(tree.removeAll(['f', 'd']).get('d')).toEqual(undefined)
+      expect(tree.removeAll(['e', 'b']).get('e')).toEqual(undefined)
+      expect(tree.removeAll(['e', 'b']).get('b')).toEqual(undefined)
     })
   })
 })
