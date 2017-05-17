@@ -4,10 +4,11 @@ export default function (
   key,
   callback = emptyFunc,
   onLeftTraverse = emptyFunc,
-  onRightTraverse = emptyFunc
+  onRightTraverse = emptyFunc,
+  startNode = this.root
 ) {
   let found = false
-  let current = this.root
+  let current = startNode
 
   while (!found && current) {
     const currentKey = current.get('key')
