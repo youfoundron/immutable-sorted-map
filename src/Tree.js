@@ -1,12 +1,17 @@
-import { Map } from 'extendable-immutable'
+import { Map as ExtendableMap } from 'extendable-immutable'
+import { Map } from 'immutable'
 import api from './api'
 import * as util from './util'
 
-class Tree extends Map {
-  constructor (root) {
-    super(util.isMap(root) ? root.toJS() : root)
+class Tree extends ExtendableMap {
+  constructor (data) {
+    const entries = util.isMap(data)
+      ? data.entries() : Object.entries(data)
+    const treeMap = util.isTreeMap(data)
+      ? Map(data) : util.entriesToTreeMap(entries)
+    super(treeMap)
     this.klass = Tree
-    this.root = this.isMap(root) ? root : Map(root)
+    this.root = treeMap
     this.size = this.calculateSize()
   }
 }
