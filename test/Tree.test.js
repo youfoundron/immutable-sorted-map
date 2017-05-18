@@ -110,5 +110,12 @@ describe('Tree', () => {
         oldValue < newValue ? oldValue : newValue, treeA
       ).get('a')).toEqual('a')
     })
+    it('#mergeDeep', () => {
+      const treeA = new Tree().set('a', {obj: {foo: 'bar', boo: 'far'}})
+      const treeB = new Tree().set('a', {obj: {foo: 'bar', boo: 'car', goo: 'gar'}})
+      expect(treeA.mergeDeep(treeB).get('a').obj.boo).toEqual('car')
+      expect(treeA.mergeDeep(treeB).get('a').obj.goo).toEqual('gar')
+      expect(treeB.mergeDeep(treeA).get('a').obj.boo).toEqual('far')
+    })
   })
 })
