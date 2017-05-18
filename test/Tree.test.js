@@ -117,5 +117,12 @@ describe('Tree', () => {
       expect(treeA.mergeDeep(treeB).get('a').obj.goo).toEqual('gar')
       expect(treeB.mergeDeep(treeA).get('a').obj.boo).toEqual('far')
     })
+    it('#mergeDeepWith', () => {
+      const treeA = new Tree().set('a', I.Map({foo: 'bar', boo: 'far'}))
+      const treeB = new Tree().set('a', I.Map({foo: 'bar', boo: 'car', goo: 'gar'}))
+      expect(treeA.mergeDeepWith((x, y) => x > y ? x : y, treeB).getIn(['a', 'boo'])).toEqual('far')
+      expect(treeA.mergeDeepWith((x, y) => x > y ? x : y, treeB).getIn(['a', 'goo'])).toEqual('gar')
+      expect(treeB.mergeDeepWith((x, y) => x > y ? x : y, treeA).getIn(['a', 'boo'])).toEqual('far')
+    })
   })
 })
