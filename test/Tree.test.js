@@ -138,5 +138,10 @@ describe('Tree', () => {
       const treeA = new Tree().set('a', I.Map({foo: 'bar'}))
       expect(treeA.updateIn(['a', 'foo'], val => val.toUpperCase()).getIn(['a', 'foo'])).toEqual('BAR')
     })
+    it('#mergeIn', () => {
+      const treeA = new Tree().set('a', I.Map({obj: I.Map({foo: 'bar'})}))
+      const treeB = new Tree().set('a', I.Map({obj: I.Map({foo: 'car', goo: 'gar'})}))
+      expect(treeA.mergeIn(['a', 'obj'], treeB.getIn(['a', 'obj'])).getIn(['a', 'obj', 'foo'])).toEqual('car')
+    })
   })
 })
