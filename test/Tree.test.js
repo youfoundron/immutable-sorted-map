@@ -125,4 +125,10 @@ describe('Tree', () => {
       expect(treeB.mergeDeepWith((x, y) => x > y ? x : y, treeA).getIn(['a', 'boo'])).toEqual('far')
     })
   })
+  describe('Deep persistent changes', () => {
+    it('#setIn', () => {
+      const treeA = new Tree().set('a', I.Map({foo: 'bar'}))
+      expect(treeA.setIn(['a', 'foo'], 'rab').getIn(['a', 'foo'])).toEqual('rab')
+    })
+  })
 })
