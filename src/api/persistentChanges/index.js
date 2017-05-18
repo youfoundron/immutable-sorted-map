@@ -4,6 +4,7 @@ import deleteAll from './deleteAll'
 import clear from './clear'
 import merge from './merge'
 import mergeWith from './mergeWith'
+import mergeDeep from './mergeDeep'
 
 export default {
   set,
@@ -11,5 +12,6 @@ export default {
   deleteAll,
   clear,
   merge,
-  mergeWith
+  mergeWith,
+  mergeDeep
 }
