@@ -130,5 +130,9 @@ describe('Tree', () => {
       const treeA = new Tree().set('a', I.Map({foo: 'bar'}))
       expect(treeA.setIn(['a', 'foo'], 'rab').getIn(['a', 'foo'])).toEqual('rab')
     })
+    it('#deleteIn', () => {
+      const treeA = new Tree().set('a', I.Map({foo: 'bar'}))
+      expect(treeA.deleteIn(['a', 'foo']).getIn(['a', 'foo'])).toEqual(undefined)
+    })
   })
 })
