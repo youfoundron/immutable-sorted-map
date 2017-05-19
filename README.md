@@ -31,28 +31,19 @@ myImmutableData.toJS()
 ```
 
 ## Api
-<p><details>
-  <summary><b>Construction</b></summary>
-  <ul>
-    <!-- <li><a href="">Get</a></li> -->
-  </ul>
-</details></p>
-<p><details>
-  <summary><b>Static methods</b></summary>
-  <ul>
-    <!-- <li><a href="">Get</a></li> -->
-  </ul>
-</details></p>
-<p><details>
-  <summary><b>Members</b></summary>
-  <ul>
-    <!-- <li><a href="">Get</a></li> -->
-  </ul>
-</details></p>
+<b>Construction</b>  
+`SortedMap()`  
+
+<b>Static methods</b>  
+`SortedMap.isSortedMap()`
+
+<b>Members</b>  
+`size`
+
 <p><details>
   <summary><b>Persistent changes</b></summary>
   <ul>
-    <!-- <li><a href="">Get</a></li> -->
+    <li><a href="https://facebook.github.io/immutable-js/docs/#/Map/set">`set()`</a></li><li><a href="https://facebook.github.io/immutable-js/docs/#/Map/delete">`delete()`</a></li><li><a href="https://facebook.github.io/immutable-js/docs/#/Map/deleteAll">`deleteAll()`</a></li><li><a href="https://facebook.github.io/immutable-js/docs/#/Map/clear">`clear()`</a></li><li><a href="https://facebook.github.io/immutable-js/docs/#/Map/update">`update()`</a></li><li><a href="https://facebook.github.io/immutable-js/docs/#/Map/merge">`merge()`</a></li><li><a href="https://facebook.github.io/immutable-js/docs/#/Map/mergeWith">`mergeWith()`</a></li><li><a href="https://facebook.github.io/immutable-js/docs/#/Map/mergeDeep">`mergeDeep()`</a></li><li><a href="https://facebook.github.io/immutable-js/docs/#/Map/mergeDeepWith">`mergeDeepWith()`</a></li>
   </ul>
 </details></p>
 <p><details>
