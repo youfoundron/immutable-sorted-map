@@ -2,26 +2,14 @@ import I from 'immutable'
 import Tree from '../src'
 import classValues from './classValues'
 import readingValues from './readingValues'
+import readingDeepValues from './readingDeepValues'
 
 describe('SortedMap', () => {
   const myTree = new Tree({foo: 'bar'})
 
   describe('Class values', classValues)
   describe('Reading values', readingValues)
-
-  describe('Reading deep values', () => {
-    it('#getIn', () => {
-      const _myTree = myTree.set('moo', I.Map({soundOf: 'cow'}))
-      expect(_myTree.getIn(['moo', 'soundOf'])).toEqual('cow')
-      expect(_myTree.getIn(['moo', 'nope'])).toEqual(undefined)
-      expect(_myTree.getIn(['moo', 'node'], 'notSet')).toEqual('notSet')
-    })
-    it('#hasIn', () => {
-      const _myTree = myTree.set('moo', I.Map({soundOf: 'cow'}))
-      expect(_myTree.hasIn(['moo', 'soundOf'])).toEqual(true)
-      expect(_myTree.hasIn(['moo', 'nope'])).toEqual(false)
-    })
-  })
+  describe('Reading deep values', readingDeepValues)
 
   describe('Persistent changes', () => {
     it('#set', () => {
