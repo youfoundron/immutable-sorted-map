@@ -1,5 +1,5 @@
 import I from 'immutable'
-import Tree from '../src/Tree'
+import Tree from '../src'
 
 describe('Tree', () => {
   const myTree = new Tree({foo: 'bar'})
