@@ -1,20 +1,11 @@
 import I from 'immutable'
 import Tree from '../src'
+import classValues from './classValues'
 
-describe('Tree', () => {
+describe('SortedMap', () => {
   const myTree = new Tree({foo: 'bar'})
 
-  describe('Class values', () => {
-    it('#klass', () => {
-      expect(myTree.klass).toEqual(Tree)
-    })
-    it('#root', () => {
-      expect(myTree.root.toJS().value).toEqual('bar')
-    })
-    it('#size', () => {
-      expect(myTree.size).toEqual(1)
-    })
-  })
+  describe('Class values', classValues)
 
   describe('Reading values', () => {
     it('#get', () => {
