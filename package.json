@@ -1,7 +1,7 @@
 {
-  "name": "immutable-trees",
+  "name": "immutable-sorted-map",
   "version": "0.0.1",
-  "description": "Immutable.js friendly Binary Search Tree implementations.",
+  "description": "SortedMap implemented in Immutable.js",
   "main": "lib/index.js",
   "scripts": {
     "prepublish": "npm run clean && npm run build",
@@ -19,25 +19,21 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rongierlach/immutable-trees.git"
+    "url": "git+https://github.com/rongierlach/immutable-sorted-map.git"
   },
   "keywords": [
     "immutable",
     "immutablejs",
-    "binary",
-    "search",
-    "tree",
-    "avl",
-    "red",
-    "black",
-    "js"
+    "sorted",
+    "map",
+    "keys"
   ],
   "author": "https://github.com/rongierlach",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/rongierlach/immutable-trees/issues"
+    "url": "https://github.com/rongierlach/immutable-sorted-map/issues"
   },
-  "homepage": "https://github.com/rongierlach/immutable-trees#readme",
+  "homepage": "https://github.com/rongierlach/immutable-sorted-map#readme",
   "peerDependencies": {
     "extendable-immutable": "^1.3.2",
     "immutable": "^4.0.0"
