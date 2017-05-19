@@ -1,37 +1,13 @@
 import I from 'immutable'
 import Tree from '../src'
 import classValues from './classValues'
+import readingValues from './readingValues'
 
 describe('SortedMap', () => {
   const myTree = new Tree({foo: 'bar'})
 
   describe('Class values', classValues)
-
-  describe('Reading values', () => {
-    it('#get', () => {
-      expect(myTree.get('foo')).toEqual('bar')
-      expect(myTree.get('nope')).toEqual(undefined)
-      expect(myTree.get('nope', 'notSet')).toEqual('notSet')
-    })
-    it('#has', () => {
-      expect(myTree.has('foo')).toEqual(true)
-      expect(myTree.has('nope')).toEqual(false)
-    })
-    it('#includes', () => {
-      expect(myTree.includes('bar')).toEqual(true)
-      expect(myTree.contains('bar')).toEqual(true)
-    })
-    it('#first', () => {
-      expect(myTree.first()).toEqual('bar')
-      const _myTree = myTree.set('moo', 'cow').set('aaa', 'car')
-      expect(_myTree.first()).toEqual('car')
-    })
-    it('#last', () => {
-      expect(myTree.last()).toEqual('bar')
-      const _myTree = myTree.set('moo', 'cow').set('aaa', 'car')
-      expect(_myTree.last()).toEqual('cow')
-    })
-  })
+  describe('Reading values', readingValues)
 
   describe('Reading deep values', () => {
     it('#getIn', () => {
