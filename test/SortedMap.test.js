@@ -3,83 +3,14 @@ import Tree from '../src'
 import classValues from './classValues'
 import readingValues from './readingValues'
 import readingDeepValues from './readingDeepValues'
+import persistentChanges from './persistentChanges'
 
 describe('SortedMap', () => {
-  const myTree = new Tree({foo: 'bar'})
-
   describe('Class values', classValues)
   describe('Reading values', readingValues)
   describe('Reading deep values', readingDeepValues)
+  describe('Persistent changese', persistentChanges)
 
-  describe('Persistent changes', () => {
-    it('#set', () => {
-      const _myTree = myTree.set('moo', 'cow')
-      expect(_myTree.size).toEqual(2)
-      expect(_myTree.get('moo')).toEqual('cow')
-      expect(_myTree.set('moo', 'pig').get('moo')).toEqual('pig')
-    })
-    it('#delete', () => {
-      const tree = new Tree({'d': 'dee'})
-        .set('b', 'bee').set('f', 'fee').set('e', 'ear')
-      expect(tree.delete('d').get('d')).toEqual(undefined)
-      expect(tree.delete('b').get('b')).toEqual(undefined)
-      expect(tree.delete('f').get('f')).toEqual(undefined)
-      expect(tree.delete('e').get('e')).toEqual(undefined)
-      expect(tree.remove('d').get('d')).toEqual(undefined)
-      expect(tree.remove('b').get('b')).toEqual(undefined)
-      expect(tree.remove('f').get('f')).toEqual(undefined)
-      expect(tree.remove('e').get('e')).toEqual(undefined)
-    })
-    it('#deleteAll', () => {
-      const tree = new Tree({'d': 'dee'})
-        .set('b', 'bee').set('f', 'fee').set('e', 'ear')
-      expect(tree.deleteAll(['f', 'd']).get('f')).toEqual(undefined)
-      expect(tree.deleteAll(['f', 'd']).get('d')).toEqual(undefined)
-      expect(tree.deleteAll(['e', 'b']).get('e')).toEqual(undefined)
-      expect(tree.deleteAll(['e', 'b']).get('b')).toEqual(undefined)
-      expect(tree.removeAll(['f', 'd']).get('f')).toEqual(undefined)
-      expect(tree.removeAll(['f', 'd']).get('d')).toEqual(undefined)
-      expect(tree.removeAll(['e', 'b']).get('e')).toEqual(undefined)
-      expect(tree.removeAll(['e', 'b']).get('b')).toEqual(undefined)
-    })
-    it('#clear', () => {
-      expect(myTree.clear().root.isEmpty()).toEqual(true)
-    })
-    it('#update', () => {
-      expect(myTree.update('foo', value => value.toUpperCase()).get('foo')).toEqual(myTree.get('foo').toUpperCase())
-      expect(myTree.update('boo', 'mama', value => value.toUpperCase()).get('boo')).toEqual('MAMA')
-    })
-    it('#merge', () => {
-      const treeA = new Tree().set('a', 'a').set('b', 'b')
-      const treeB = new Tree().set('a', 'b').set('c', 'c')
-      expect(treeA.merge(treeB).get('a')).toEqual('b')
-      expect(treeB.merge(treeA).get('a')).toEqual('a')
-    })
-    it('#mergeWith', () => {
-      const treeA = new Tree().set('a', 'a').set('b', 'b')
-      const treeB = new Tree().set('a', 'b').set('c', 'c')
-      expect(treeA.mergeWith((oldValue, newValue) =>
-        oldValue < newValue ? oldValue : newValue, treeB
-      ).get('a')).toEqual('a')
-      expect(treeB.mergeWith((oldValue, newValue) =>
-        oldValue < newValue ? oldValue : newValue, treeA
-      ).get('a')).toEqual('a')
-    })
-    it('#mergeDeep', () => {
-      const treeA = new Tree().set('a', {obj: {foo: 'bar', boo: 'far'}})
-      const treeB = new Tree().set('a', {obj: {foo: 'bar', boo: 'car', goo: 'gar'}})
-      expect(treeA.mergeDeep(treeB).get('a').obj.boo).toEqual('car')
-      expect(treeA.mergeDeep(treeB).get('a').obj.goo).toEqual('gar')
-      expect(treeB.mergeDeep(treeA).get('a').obj.boo).toEqual('far')
-    })
-    it('#mergeDeepWith', () => {
-      const treeA = new Tree().set('a', I.Map({foo: 'bar', boo: 'far'}))
-      const treeB = new Tree().set('a', I.Map({foo: 'bar', boo: 'car', goo: 'gar'}))
-      expect(treeA.mergeDeepWith((x, y) => x > y ? x : y, treeB).getIn(['a', 'boo'])).toEqual('far')
-      expect(treeA.mergeDeepWith((x, y) => x > y ? x : y, treeB).getIn(['a', 'goo'])).toEqual('gar')
-      expect(treeB.mergeDeepWith((x, y) => x > y ? x : y, treeA).getIn(['a', 'boo'])).toEqual('far')
-    })
-  })
   describe('Deep persistent changes', () => {
     it('#setIn', () => {
       const treeA = new Tree().set('a', I.Map({foo: 'bar'}))
