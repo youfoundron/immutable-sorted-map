@@ -1,4 +1,3 @@
 import { Map } from 'immutable'
-const { isMap } = Map
 
-export default isMap
+export default Map.isMap
