@@ -154,7 +154,7 @@ SortedMap.prototype.mergeDeepWith = api.mergeDeepWith
 // SortedMap.prototype.every = api.every
 // SortedMap.prototype.some = api.some
 // SortedMap.prototype.join = api.join
-// SortedMap.prototype.isEmpty = api.isEmpty
+SortedMap.prototype.isEmpty = api.isEmpty
 // SortedMap.prototype.count = api.count
 // SortedMap.prototype.countBy = api.countBy
 
