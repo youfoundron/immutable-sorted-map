@@ -1,10 +1,10 @@
-const emptyFunc = () => null
+import identityFunc from './identityFunc'
 
 export default function (
   key,
-  callback = emptyFunc,
-  onLeftTraverse = emptyFunc,
-  onRightTraverse = emptyFunc,
+  callback = identityFunc,
+  onLeftTraverse = identityFunc,
+  onRightTraverse = identityFunc,
   startNode = this.root
 ) {
   let found = false
