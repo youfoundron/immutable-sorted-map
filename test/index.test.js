@@ -4,6 +4,7 @@ import readingValues from './readingValues'
 import readingDeepValues from './readingDeepValues'
 import persistentChanges from './persistentChanges'
 import deepPersistentChanges from './deepPersistentChanges'
+import sideEffects from './sideEffects'
 
 describe('SortedMap', () => {
   describe('Utility functions', utils)
@@ -12,4 +13,5 @@ describe('SortedMap', () => {
   describe('Reading deep values', readingDeepValues)
   describe('Persistent changese', persistentChanges)
   describe('Deep persistent changes', deepPersistentChanges)
+  describe('Side effects', sideEffects)
 })
