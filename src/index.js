@@ -97,7 +97,7 @@ SortedMap.prototype.mergeDeepWith = api.mergeDeepWith
 /* Sequence functions
 ** *********************** */
 // SortedMap.prototype.flip = api.flip
-// [Symbol.iterator]()
+// SortedMap[Symbol.iterator] = api[Symbol.iterator]
 
 /* Value equality
 ** *********************** */
@@ -115,9 +115,9 @@ SortedMap.prototype.mergeDeepWith = api.mergeDeepWith
 
 /* Iterators
 ** *********************** */
-// SortedMap.prototype.keys = api.keys
-// SortedMap.prototype.values = api.values
-// SortedMap.prototype.entries = api.entries
+SortedMap.prototype.keys = api.keys
+SortedMap.prototype.values = api.values
+SortedMap.prototype.entries = api.entries
 
 /* Collections (Seq)
 ** *********************** */
@@ -127,7 +127,7 @@ SortedMap.prototype.mergeDeepWith = api.mergeDeepWith
 
 /* Side effects
 ** *********************** */
-// SortedMap.prototype.forEach = api.forEach
+SortedMap.prototype.forEach = api.forEach
 
 /* Creating subsets
 ** *********************** */
