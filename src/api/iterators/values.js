@@ -7,7 +7,7 @@ export default function () {
       return {
         next () {
           return {
-            done: i < values.length,
+            done: i > values.length - 1,
             value: values[i++]
           }
         }

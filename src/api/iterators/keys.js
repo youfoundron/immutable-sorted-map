@@ -7,7 +7,7 @@ export default function () {
       return {
         next () {
           return {
-            done: i < keys.length,
+            done: i > keys.length - 1,
             value: keys[i++]
           }
         }
