@@ -4,10 +4,10 @@ import api from './api'
 import * as util from './util'
 
 class SortedMap extends ExtendableMap {
-  constructor (data = {}) {
+  constructor (data = {}, compareKeys = util.compareKeys) {
     const entries = util.isMap(data)
       ? data.entries() : Object.entries(data)
-    const treeMap = util.isTreeMap(data)
+    const treeMap = util.isTreeMap(data, compareKeys)
       ? Map(data) : util.entriesToTreeMap(entries)
     super(treeMap)
     this.klass = SortedMap
