@@ -6,6 +6,7 @@ import persistentChanges from './persistentChanges'
 import deepPersistentChanges from './deepPersistentChanges'
 import conversionToJavascriptTypes from './conversionToJavascriptTypes'
 import sequenceAlgorithms from './sequenceAlgorithms'
+import collectionsSeq from './collectionsSeq'
 import iterators from './iterators'
 import sideEffects from './sideEffects'
 
@@ -18,6 +19,7 @@ describe('SortedMap', () => {
   describe('Deep persistent changes', deepPersistentChanges)
   describe('Conversion to JavaScript types', conversionToJavascriptTypes)
   describe('Sequence algorithms', sequenceAlgorithms)
+  describe('Collections (Seq)', collectionsSeq)
   describe('Iterators', iterators)
   describe('Side effects', sideEffects)
 })
