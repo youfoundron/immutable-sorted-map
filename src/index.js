@@ -7,8 +7,8 @@ class SortedMap extends ExtendableMap {
   constructor (data = {}, compareKeys = util.compareKeys) {
     const entries = util.isMap(data)
       ? data.entries() : Object.entries(data)
-    const treeMap = util.isTreeMap(data, compareKeys)
-      ? Map(data) : util.entriesToTreeMap(entries)
+    const treeMap = util.isTreeMap(data)
+      ? Map(data) : util.entriesToTreeMap(entries, compareKeys)
     super(treeMap)
     this.klass = SortedMap
     this.root = treeMap
