@@ -82,10 +82,10 @@ SortedMap.prototype.map = api.map
 
 /* Conversion to Javascript types
 ** *********************** */
-// SortedMap.prototype.toJS = api.toJS
-// SortedMap.prototype.toJSON = api.toJSON
-// SortedMap.prototype.toArray = api.toArray
-// SortedMap.prototype.toObject = api.toObject
+SortedMap.prototype.toJS = api.toJS
+SortedMap.prototype.toJSON = api.toJSON
+SortedMap.prototype.toArray = api.toArray
+SortedMap.prototype.toObject = api.toObject
 
 /* Conversion to Sequence
 ** *********************** */
