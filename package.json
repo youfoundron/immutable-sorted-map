@@ -1,6 +1,6 @@
 {
   "name": "immutable-sorted-map",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "SortedMap implemented in Immutable.js",
   "main": "lib/index.js",
   "scripts": {
