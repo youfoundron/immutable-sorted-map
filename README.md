@@ -20,7 +20,15 @@ const myData = {
   '0.1': 'tenth'
 }
 
-const myImmutableData = new SortedMap(myData)
+const compareKeys = (currKey, nextKey) => {
+  const currNum = Number(currKey)
+  const nextNum = Number(nextKey)
+  if (currNum < nextNum) return -1
+  if (currNum > nextNum) return 1
+  return 0
+}
+
+const myImmutableData = new SortedMap(myData, compareKeys)
 
 myImmutableData.toJS()
 /* {
