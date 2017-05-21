@@ -3,9 +3,9 @@ import toJSON from './toJSON'
 import toArray from './toArray'
 import toObject from './toObject'
 
-export default () => {
-  it('#toJS', toJS)
-  it('#toJSON', toJSON)
-  it('#toArray', toArray)
-  it('#toObject', toObject)
+export default {
+  toJS,
+  toJSON,
+  toArray,
+  toObject
 }
