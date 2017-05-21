@@ -4,6 +4,7 @@ import readingValues from './readingValues'
 import readingDeepValues from './readingDeepValues'
 import persistentChanges from './persistentChanges'
 import deepPersistentChanges from './deepPersistentChanges'
+import sequenceAlgorithms from './sequenceAlgorithms'
 import iterators from './iterators'
 import sideEffects from './sideEffects'
 
@@ -14,6 +15,7 @@ describe('SortedMap', () => {
   describe('Reading deep values', readingDeepValues)
   describe('Persistent changese', persistentChanges)
   describe('Deep persistent changes', deepPersistentChanges)
+  describe('Sequence algorithms', sequenceAlgorithms)
   describe('Iterators', iterators)
   describe('Side effects', sideEffects)
 })
