@@ -121,9 +121,9 @@ SortedMap.prototype.entries = api.entries
 
 /* Collections (Seq)
 ** *********************** */
-// SortedMap.prototype.keySeq = api.keySeq
-// SortedMap.prototype.valueSeq = api.valueSeq
-// SortedMap.prototype.entrySeq = api.entrySeq
+SortedMap.prototype.keySeq = api.keySeq
+SortedMap.prototype.valueSeq = api.valueSeq
+SortedMap.prototype.entrySeq = api.entrySeq
 
 /* Side effects
 ** *********************** */

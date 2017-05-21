@@ -1,8 +1,8 @@
 import readingValues from './readingValues'
 import persistentChanges from './persistentChanges'
-// import transientChanges from './transientChanges'
 import sequenceAlgorithms from './sequenceAlgorithms'
 import conversionToJavascriptTypes from './conversionToJavascriptTypes'
+import collectionsSeq from './collectionsSeq'
 import iterators from './iterators'
 import sideEffects from './sideEffects'
 import reducingAValue from './reducingAValue'
@@ -10,9 +10,9 @@ import reducingAValue from './reducingAValue'
 export default {
   ...readingValues,
   ...persistentChanges,
-  // ...transientChanges,
   ...sequenceAlgorithms,
   ...conversionToJavascriptTypes,
+  ...collectionsSeq,
   ...iterators,
   ...sideEffects,
   ...reducingAValue
