@@ -1,7 +1,7 @@
 import isMap from './isMap'
 
 const leftToRight = (node, cb) => {
-  if (isMap(node)) {
+  if (isMap(node) && !node.isEmpty()) {
     const leftChild = node.get('left')
     const rightChild = node.get('right')
 
@@ -12,7 +12,7 @@ const leftToRight = (node, cb) => {
 }
 
 const rightToleft = (node, cb) => {
-  if (isMap(node)) {
+  if (isMap(node) && !node.isEmpty()) {
     const leftChild = node.get('left')
     const rightChild = node.get('right')
 
