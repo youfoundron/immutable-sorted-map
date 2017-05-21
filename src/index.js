@@ -68,8 +68,8 @@ SortedMap.prototype.mergeDeepWith = api.mergeDeepWith
 
 /* Sequence algorithms
 ** *********************** */
-// SortedMap.prototype.concat = api.concat
-// SortedMap.prototype.map = api.map
+SortedMap.prototype.concat = api.concat
+SortedMap.prototype.map = api.map
 // SortedMap.prototype.mapKeys = api.mapKeys
 // SortedMap.prototype.mapEntries = api.mapEntries
 // SortedMap.prototype.flatMap = api.flatMap
