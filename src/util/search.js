@@ -7,7 +7,7 @@ export default function (
   onLeftTraverse = identityFunc,
   onRightTraverse = identityFunc,
   startNode = this.root,
-  compareKeys = _compareKeys
+  compareKeys = this.compareKeys || _compareKeys
 ) {
   let found = false
   let current = startNode

@@ -13,6 +13,7 @@ class SortedMap extends ExtendableMap {
     this.klass = SortedMap
     this.root = treeMap
     this.size = this.calculateSize()
+    this.compareKeys = compareKeys
   }
 }
 
