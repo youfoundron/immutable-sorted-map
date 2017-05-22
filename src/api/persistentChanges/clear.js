@@ -1,3 +1,3 @@
 export default function () {
-  return this.klass(this.root.clear())
+  return this.klass(this.root.clear(), this.compareKeys)
 }

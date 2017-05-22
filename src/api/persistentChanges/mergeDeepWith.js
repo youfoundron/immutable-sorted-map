@@ -16,6 +16,7 @@ export default function (merger = identityFunc, ...trees) {
 
       resultTree = this.klass(
         resultTree.root.setIn(keyPath, oldNode.mergeDeepWith(merger, newNode))
+        , this.compareKeys
       )
     })
     return resultTree

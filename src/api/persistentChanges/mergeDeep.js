@@ -14,6 +14,7 @@ export default function (...trees) {
 
       resultTree = this.klass(
         resultTree.root.setIn(keyPath, oldNode.mergeDeep(newNode))
+        , this.compareKeys
       )
     })
     return resultTree

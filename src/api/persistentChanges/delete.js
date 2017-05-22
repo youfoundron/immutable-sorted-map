@@ -8,7 +8,7 @@ export default function (key) {
     () => keyPath.push('right')
   )
 
-  if (!node && !found) return this.klass(this.root)
+  if (!node && !found) return this.klass(this.root, this.compareKeys)
 
   const isRoot = keyPath.length === 0
   const leftChild = node.get('left')
@@ -23,11 +23,13 @@ export default function (key) {
       isRoot
       ? this.root.deleteAll(['key', 'value', 'left', 'right'])
       : this.root.deleteIn(keyPath)
+      , this.compareKeys
     )
     case 1 : return this.klass(
       isRoot
       ? leftChild || rightChild
       : this.root.setIn(keyPath, leftChild || rightChild)
+      , this.compareKeys
     )
     case 2 :
       const minNodeKeyPath = ['right']
@@ -41,7 +43,8 @@ export default function (key) {
         : this.root
           .setIn(keyPath, minNode)
           .deleteIn([...keyPath, ...minNodeKeyPath])
+        , this.compareKeys
       )
-    default : return this.klass(this.root)
+    default : return this.klass(this.root, this.compareKeys)
   }
 }

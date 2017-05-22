@@ -12,5 +12,6 @@ export default function (key, value) {
     this.root
       .setIn([...keyPath, 'key'], key)
       .setIn([...keyPath, 'value'], value)
+    , this.compareKeys
   )
 }
